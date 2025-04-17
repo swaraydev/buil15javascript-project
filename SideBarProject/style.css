@@ -1,0 +1,201 @@
+/* 
+==================
+Fonts
+==================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*
+===============
+Variables
+=============== 
+*/
+
+:root {
+  /*dark shades of primary color*/
+
+  --color-primary-1: hsl(205, 86%, 17%);
+  --color-primary-2: hsl(205, 77%, 17%);
+  --color-primary-3: hsl(205, 72%, 37%);
+  --color-primary-4: hsl(205, 63%, 48%);
+
+  /* primary/main color*/
+  --color-primary-5: hsl(205, 78%, 60%);
+
+  /* lighter shades of primary color*/
+  --color-primary-6: hsl(205, 89%, 70%);
+  --color-primary-7: hsl(205, 90%, 76%);
+  --color-primary-8: hsl(205, 90%, 76%);
+  --color-primary-9: hsl(205, 90%, 76%);
+  --color-primary-10: hsl(205, 90%, 76%);
+
+  /* darkest grey -used for headings*/
+  --color-grey-1: hsl(209, 61%, 16%);
+  --color-grey-2: hsl(211, 39%, 23%);
+  --color-grey-3: hsl(209, 34%, 30%);
+  --color-grey-4: hsl(209, 61%, 16%);
+  /*grey used for paragraps*/
+  --color-grey-5: hsl(210, 22%, 49%);
+  --color-grey-6: hsl(209, 23%, 60%);
+  --color-grey-7: hsl(211, 27%, 70%);
+  --color-grey-8: hsl(210, 31%, 80%);
+  --color-grey-9: hsl(212, 33%, 89%);
+  --color-grey-10: hsl(210, 36%, 96%);
+  --color-white: #fff;
+  --color-red-dark: hsl(360, 67%, 44%);
+  -color-red-light: hsl(360, 71%, 66%);
+  --color-green-dark: hsl(125, 67%, 44%);
+  --color-green-light: hsl(125, 71%, 66%);
+  --color-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-grey-10);
+  font-family: var(--ff-secondary);
+  color: var(--color-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.sideBar-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  color: var(--color-primary-5);
+  font-size: 2rem;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.sideBar-toggle:hover {
+  color: var(--color-primary-7);
+  border-color: var(--color-primary-5);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sideBar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-primary-7);
+  transition: var(--transition);
+  cursor: pointer;
+  color: var(--color-red-dark);
+}
+.close-btn:hover {
+  color: var(--color-red-light);
+  transform: rotate(360deg);
+}
+
+.logo {
+  justify-self: center;
+  height: 40px;
+}
+
+.links a {
+  display: block;
+  color: var(--color-grey-5);
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  transition: var(--transition);
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--color-primary-5);
+  background: var(--color-primary-8);
+  padding-left: 1.75rem;
+}
+
+.social-icons {
+  justify-self: center;
+  display: flex;
+  padding-bottom: 2rem;
+}
+.social-icons a {
+  font-family: 1.5rem;
+  margin: 0 0.5rem;
+  color: var(--color-primary-5);
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--color-primary-1);
+}
+.sideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  box-shadow: var(--color-red-dark);
+  transition: var(--transition);
+  transform: translate(-100%);
+}
+
+.show-sidebar {
+  transform: translate(0);
+}
+
+@media screen and (min-width: 676px) {
+  .sideBar {
+    width: 400px;
+  }
+}
